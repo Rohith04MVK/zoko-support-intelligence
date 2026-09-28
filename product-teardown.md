@@ -53,12 +53,6 @@ and accidental changes to supporting logic.
 
 ## 4. Offer configurable AI voice agents
 
-**Opportunity:** WhatsApp calling already exists in Zoko. The settings inspected
-cover duration and callback-request language. The
-[calling-health guide](https://www.zoko.io/learning-micro-lessons/whatsapp-calling-health-status)
-covers restrictions, not AI agent functionality. Equivalent AI capabilities elsewhere
-remain to be confirmed before treating this as entirely new.
-
 **Change:** Configure voice agents with store knowledge, languages, instructions,
 and permitted actions. Make them available in calling and Flows for product discovery,
 purchase guidance, order questions, and requested callbacks. Carry chat context into
@@ -70,17 +64,21 @@ store context rather than separate manual processes. Pilot task completion, cust
 satisfaction, handoff quality, and cost per completed task before claiming ROI.
 Technical feasibility and existing capability need validation.
 
-## 5. Preview personalized messages without sending
+## 5. Add A/B testing for broadcasts
 
-**Observed:** Inspected broadcast and flow previews displayed variable tokens such
-as customer name and checkout-link references. Broadcast QR tests and the flow
-Send Message action already exist. A preview rendered with selected customer data
-was not visible in the screens inspected; availability elsewhere remains unconfirmed.
+**Change:** Add an A/B Test broadcast type. Merchants could create two versions of a
+campaign and choose what to test, such as message copy or CTA, image or carousel
+content, discount or offer, and send time. Zoko would randomly split a selected
+audience between the variants and compare results using replies, clicks, orders,
+revenue, and return on spend.
 
-**Change:** Add Preview as customer for broadcasts and Preview with sample checkout
-for flows. Render names, images, and destination links locally in the editor, flag
-missing values, and offer suitable fallback settings before test sending.
+For larger campaigns, merchants could optionally send each variant to a small sample
+first, choose a winning metric such as revenue per recipient, and automatically send
+the winning version to the remaining audience.
 
-**Why / expected impact:** Keep the existing test-send path while reducing the number
-of sends needed to check personalization. Measure verification time, test-send
-iterations, and missing-variable issues found before activation.
+**Why / expected impact:** Merchants already have the data needed to evaluate
+campaigns. Experimentation turns that data into a repeatable optimization loop.
+Controlled tests show which message performs better without comparing separate
+broadcasts sent to different audiences. Measure experiment adoption, lift between
+tested and subsequent campaigns, revenue per recipient, and the percentage of tests
+that produce a statistically meaningful winner.
